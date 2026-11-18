@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>950</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form Peminjaman Buku</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #F8F9FA;
+}
+
+QLabel#lblTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2C3E50;
+}
+
+QLabel {
+    font-size: 12px;
+    color: #333;
+}
+
+QLineEdit, QComboBox, QDateEdit, QSpinBox {
+    padding: 6px;
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+    background-color: white;
+}
+
+QLineEdit:focus, QComboBox:focus, QDateEdit:focus, QSpinBox:focus {
+    border: 1px solid #3498DB;
+}
+
+QPushButton {
+    background-color: #34495E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #415B76;
+}
+
+QPushButton#btnPinjam {
+    background-color: #2980B9;
+}
+
+QPushButton#btnPinjam:hover {
+    background-color: #3498DB;
+}
+
+QTableWidget {
+    background-color: white;
+    border: 1px solid #BDC3C7;
+    gridline-color: #ECF0F1;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lblTitle">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>10</y>
+      <width>281</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+font-weight: bold;
+color: #2C3E50;
+margin-bottom: 10px;</string>
+    </property>
+    <property name="text">
+     <string>📤 FORM PINJAMAN BUKU</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblIdPinjam">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>70</y>
+      <width>110</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID Pinjam:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblNamaPeminjam">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>110</y>
+      <width>110</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nama Peminjam:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblBuku">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>150</y>
+      <width>110</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pilih Buku:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblTanggalPinjam">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>190</y>
+      <width>110</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tanggal Pinjam:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblDurasi">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>110</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Durasi (Hari):</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtNamaPeminjam">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>110</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+background-color: white;
+border: 1px solid #BDC3C7;
+border-radius: 4px;
+padding: 5px;
+font-size: 13px;
+}
+QLineEdit:focus {
+border: 1px solid #3498DB;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtIdPinjam">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>70</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+background-color: white;
+border: 1px solid #BDC3C7;
+border-radius: 4px;
+padding: 5px;
+font-size: 13px;
+}
+QLineEdit:focus {
+border: 1px solid #3498DB;
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnPinjam">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>330</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #27AE60;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 13px;
+font-weight: bold;
+padding: 8px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Pinjam Buku</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnBersihkan">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>330</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #7F8C8D;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 13px;
+font-weight: bold;
+padding: 8px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Bersihkan</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnKembali">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>490</y>
+      <width>831</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #34495E;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 13px;
+font-weight: bold;
+padding: 8px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Kembali Ke Menu Utama</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tablePeminjaman">
+    <property name="geometry">
+     <rect>
+      <x>439</x>
+      <y>60</y>
+      <width>451</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTableWodget {
+background-color: white;
+border: 1px solid #BDC3C7;
+gridline-color: #ECF0F1;
+font-size: 13px;
+}
+QHeaderView:section {
+background-color: #34495E;
+color: white;
+padding: 6px;
+font-weight: bold;
+border: none;
+}</string>
+    </property>
+    <attribute name="verticalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>ID Pinjam</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Nama Peminjam</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>ID Buku</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Judul Buku</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QComboBox" name="cmbBuku">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>150</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="datePinjam">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>190</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinDurasi">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>230</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <zorder>lblTitle</zorder>
+   <zorder>lblIdPinjam</zorder>
+   <zorder>lblNamaPeminjam</zorder>
+   <zorder>lblBuku</zorder>
+   <zorder>lblTanggalPinjam</zorder>
+   <zorder>lblDurasi</zorder>
+   <zorder>txtNamaPeminjam</zorder>
+   <zorder>txtIdPinjam</zorder>
+   <zorder>btnKembali</zorder>
+   <zorder>tablePeminjaman</zorder>
+   <zorder>btnPinjam</zorder>
+   <zorder>btnBersihkan</zorder>
+   <zorder>cmbBuku</zorder>
+   <zorder>datePinjam</zorder>
+   <zorder>spinDurasi</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>950</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
